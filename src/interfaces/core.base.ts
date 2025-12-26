@@ -11,7 +11,7 @@ export type TWidgetMetaInfoBase<TFrameworkElementType = any> = {
   categories: TWidgetCategory[]
   noDuplicatedWidgets?: boolean // if true, we do not allow to add the same widget twice
   icon: TFrameworkElementType | undefined
-  externalDependencies: string[] // list of external dependencies (e.g., ['react@19.2.3', '@tenorlab/react-dashboard@1.1.3'])
+  externalDependencies: string[] // list of external dependencies (e.g., ['react@19.2.3', 'vue@3.5.25', '@tenorlab/react-dashboard@1.1.3'], etc)
 }
 
 export interface IDashboardGridPropsBase {

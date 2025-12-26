@@ -7,7 +7,18 @@ const _getStep = (suffix: string, defaultStep: number): number => {
   return _largerStepUnits.includes(suffix) ? defaultStep : 1
 }
 
+/**
+ * @name dashboardSettingsUtils
+ * @description Contains utils for the dashboard custom settings
+ */
 export const dashboardSettingsUtils = {
+  /**
+   * @name incrementOrDecrementValue
+   * @description Increments or decrement a value based on the direction parameter
+   * @param item: an instance of IDashboardSettingEntry
+   * @param direction: -1 (for decrement) or 1 (for increment)
+   * @returns the update item
+   */
   incrementOrDecrementValue: (
     item: IDashboardSettingEntry,
     direction: -1 | 1,

@@ -148,6 +148,13 @@ const _instance: IDashboardStorageService = {
   saveDashboards: _saveDashboards,
 }
 
+/**
+ * @name useDashboardStorageService
+ * @description
+ * This implementation of IDashboardStorageService uses localStorage to store custom dashboard configurations.
+ * Developers can implement their own version of the dashboard storage service to store the data in a database or other way if needed.
+ * @returns An instance of IDashboardStorageService
+ */
 export const useDashboardStorageService = (): IDashboardStorageService => {
   return _instance as any
 }

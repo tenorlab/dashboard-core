@@ -1,6 +1,11 @@
 import type { IDashboardSettingEntry } from '../interfaces'
 
-// NOTE: step should never be less than 0.1 as we do some rounding somewhere ...
+/**
+ * @name cssSettingsCatalog
+ * @description Catalog of available dashboard settings (array of IDashboardSettingEntry)
+ * @see IDashboardSettingEntry
+ * @remarks step should never be less than 0.1 as we do some rounding in other places ...
+ */
 export const cssSettingsCatalog: IDashboardSettingEntry[] = [
   {
     key: 'grid-gap',
