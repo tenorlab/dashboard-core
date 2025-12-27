@@ -1,3 +1,5 @@
+// @tenorlab/dashboard-core
+// file: src/utils/color-utils.ts
 // Helper function to resolve the current computed color for a given CSS class
 
 /**

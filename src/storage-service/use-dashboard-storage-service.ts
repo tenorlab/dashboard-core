@@ -1,4 +1,5 @@
-// file: src/components/use-dashboard-storage-service.ts
+// @tenorlab/dashboard-core
+// file: src/storage-service/use-dashboard-storage-service.ts
 import type {
   IDashboardConfig,
   TDashboardWidgetCatalogBase,
@@ -7,10 +8,26 @@ import type {
   TSaveDashboards,
 } from '../interfaces'
 
+/**
+ * @name _getLocalStorageKey
+ * @description Helper to get the local storage key for a user and client app
+ * @param userID 
+ * @param clientAppKey 
+ * @returns string
+ */
 const _getLocalStorageKey = (userID: number | string, clientAppKey: string): string => {
   return `dashboards_${clientAppKey}_${userID}`
 }
 
+/**
+ * @name _getSavedDashboards
+ * @description Implementation of TGetSavedDashboards that retrieves dashboards from localStorage
+ * @param userID 
+ * @param clientAppKey 
+ * @param widgetCatalog 
+ * @param defaultDashboardConfig 
+ * @returns Promise<IDashboardConfig[]>
+ */
 const _getSavedDashboards: TGetSavedDashboards = async (
   userID: number | string,
   clientAppKey: string,
@@ -108,6 +125,15 @@ const _getSavedDashboards: TGetSavedDashboards = async (
   return [defaultDashboardConfig]
 }
 
+/**
+ * @name _saveDashboards
+ * @description Implementation of TSaveDashboards that saves dashboards to localStorage
+ * @param userID 
+ * @param clientAppKey 
+ * @param dashboardConfigs 
+ * @param widgetCatalog 
+ * @returns Promise<boolean>
+ */
 const _saveDashboards: TSaveDashboards = async (
   userID: number | string,
   clientAppKey: string,
@@ -151,9 +177,27 @@ const _instance: IDashboardStorageService = {
 /**
  * @name useDashboardStorageService
  * @description
- * This implementation of IDashboardStorageService uses localStorage to store custom dashboard configurations.
- * Developers can implement their own version of the dashboard storage service to store the data in a database or other way if needed.
- * @returns An instance of IDashboardStorageService
+ * LocalStorage-backed implementation of `IDashboardStorageService`.
+ *
+ * Behavior:
+ * - Persists an array of `IDashboardConfig` objects under the key
+ *   `dashboards_<clientAppKey>_<userID>` in `localStorage`.
+ * - `getSavedDashboards` performs lightweight validation and normalization when
+ *   reading saved data: fills missing `dashboardId`/`dashboardName`, sanitizes
+ *   CSS settings, filters unknown widget keys, and clamps `zoomScale`.
+ * - `saveDashboards` filters invalid widget keys, ensures required metadata
+ *   (`userID`, `clientAppKey`, `responsiveGrid`, `zoomScale`) and writes the
+ *   JSON-serialized dashboards to `localStorage`.
+ *
+ * Notes / limitations:
+ * - Uses synchronous browser `localStorage` with limited quota — not suitable
+ *   for very large datasets or high-frequency writes.
+ * - Does not provide server-side persistence or multi-user synchronization. To
+ *   persist dashboards centrally, implement a custom service that adheres to
+ *   `IDashboardStorageService` and replace this implementation.
+ *
+ * @returns An object implementing `IDashboardStorageService` with
+ * `getSavedDashboards` and `saveDashboards` methods.
  */
 export const useDashboardStorageService = (): IDashboardStorageService => {
   return _instance as any

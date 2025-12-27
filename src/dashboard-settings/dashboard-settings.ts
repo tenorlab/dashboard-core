@@ -1,3 +1,5 @@
+// @tenorlab/dashboard-core
+// file: src/dashboard-settings/dashboard-settings-utils.ts
 import type { IDashboardSettingEntry } from '../interfaces'
 
 /**

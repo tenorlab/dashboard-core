@@ -1,3 +1,5 @@
+// @tenorlab/dashboard-core
+// file: src/dashboard-settings/dashboard-settings-utils.ts
 import type { IDashboardSettingEntry } from '../interfaces'
 
 // for these we increment by defaultStep, anythnig else we increment by 1

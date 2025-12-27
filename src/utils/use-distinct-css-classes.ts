@@ -1,3 +1,6 @@
+// @tenorlab/dashboard-core
+// file: src/utils/use-distinct-css-classes.ts
+
 /**
  * @name getDistinctCssClasses
  * @description Ensures a distinct list off css classes, avoiding duplicates

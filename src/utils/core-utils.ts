@@ -1,4 +1,5 @@
-// file: src/components/interfaces/core.utils.ts
+// @tenorlab/dashboard-core
+// file: src/utils/core-utils.ts
 import { cssSettingsCatalog } from '../dashboard-settings'
 import type {
   TDashboardWidgetKey,
