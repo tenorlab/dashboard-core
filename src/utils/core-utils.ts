@@ -213,6 +213,7 @@ export const createStaticEntry = <TFrameworkComponentType = any>(
       key,
       title: meta.name,
       isContainer: `${key}`.includes('Container'),
+      isRemote: false,
       meta,
       component,
     },
@@ -226,6 +227,7 @@ export const createStaticEntry = <TFrameworkComponentType = any>(
 export const createDynamicEntry = (
   key: string,
   loader: TWidgetFactoryBase,
+  isRemote: boolean,
   metaData: TWidgetMetaInfoBase,
 ): [string, IDynamicWidgetCatalogEntryBase] => {
   const meta = metaData || getDefaultWidgetMetaFromKey(key)
@@ -235,6 +237,7 @@ export const createDynamicEntry = (
       key,
       title: meta.name,
       isContainer: false,
+      isRemote,
       meta,
       loader,
     },
@@ -329,7 +332,8 @@ export const remoteWidgetDiscovery = async (
 
         // 4. USE YOUR HELPER!
         // This ensures the remote widget is structured exactly like a local one
-        catalogMapEntries.push(createDynamicEntry(key, remoteLoader, remoteMeta))
+        const isRemote = true
+        catalogMapEntries.push(createDynamicEntry(key, remoteLoader, isRemote, remoteMeta))
       }
       resolve({
         entries: catalogMapEntries,
@@ -381,8 +385,9 @@ export const localWidgetDiscovery = (
       // 2. Register Entry...
       if (lazy) {
         // In lazy mode, moduleOrLoader is () => import(...)
+        const isRemote = false
         catalogMapEntries.push(
-          createDynamicEntry(key, moduleOrLoader as TWidgetFactoryBase, widgetMeta),
+          createDynamicEntry(key, moduleOrLoader as TWidgetFactoryBase, isRemote, widgetMeta),
         )
       } else {
         const component = moduleOrLoader.default || moduleOrLoader

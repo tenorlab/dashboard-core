@@ -1,6 +1,6 @@
 {
   "name": "@tenorlab/dashboard-core",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Framework-agnostic foundation types and utils for dashboards",
   "author": "Damiano Fusco",
   "type": "module",

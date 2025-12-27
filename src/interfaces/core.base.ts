@@ -74,6 +74,7 @@ export interface IDynamicWidgetCatalogEntryBase<
   key: TDashboardWidgetKey
   title: string
   isContainer?: boolean
+  isRemote?: boolean // New Field to indicate remote widgets that are loaded through a CDN for example
   meta?: TWidgetMetaInfoBase<TFrameworkElementType> // i.e. TWidgetMetaInfo
 
   // OPTIONAL Property A: The direct React component reference (for static, core widgets)
