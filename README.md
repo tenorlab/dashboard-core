@@ -29,7 +29,7 @@ The core library ensures that whether you are building in **Vue** or **React**, 
 While primarily consumed by our framework wrappers, you could use the core for vanilla TypeScript projects:
 
 ```typescript
-// TODO: example
+// TODO: no-framework example
 ```
 
 ## Development
