@@ -11,8 +11,8 @@ import type {
 /**
  * @name _getLocalStorageKey
  * @description Helper to get the local storage key for a user and client app
- * @param userID 
- * @param clientAppKey 
+ * @param userID
+ * @param clientAppKey
  * @returns string
  */
 const _getLocalStorageKey = (userID: number | string, clientAppKey: string): string => {
@@ -22,10 +22,10 @@ const _getLocalStorageKey = (userID: number | string, clientAppKey: string): str
 /**
  * @name _getSavedDashboards
  * @description Implementation of TGetSavedDashboards that retrieves dashboards from localStorage
- * @param userID 
- * @param clientAppKey 
- * @param widgetCatalog 
- * @param defaultDashboardConfig 
+ * @param userID
+ * @param clientAppKey
+ * @param widgetCatalog
+ * @param defaultDashboardConfig
  * @returns Promise<IDashboardConfig[]>
  */
 const _getSavedDashboards: TGetSavedDashboards = async (
@@ -128,10 +128,10 @@ const _getSavedDashboards: TGetSavedDashboards = async (
 /**
  * @name _saveDashboards
  * @description Implementation of TSaveDashboards that saves dashboards to localStorage
- * @param userID 
- * @param clientAppKey 
- * @param dashboardConfigs 
- * @param widgetCatalog 
+ * @param userID
+ * @param clientAppKey
+ * @param dashboardConfigs
+ * @param widgetCatalog
  * @returns Promise<boolean>
  */
 const _saveDashboards: TSaveDashboards = async (
