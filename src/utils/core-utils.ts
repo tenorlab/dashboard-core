@@ -248,31 +248,32 @@ export const createDynamicEntry = (
 /**
  * Enhanced helper to derive key and title from widget file paths.
  * Handles:
+ * - widget-total-orders -> WidgetTotalOrders
  * - widget-revenue-trends1 -> WidgetRevenueTrends1
  * - widget-with-extraprops -> WidgetWithExtraprops
  * - widget-revenue-trends-async -> WidgetRevenueTrendsAsync
  */
 export const parseKeyAndTitleFromFilePath = (
   path: string,
-): { key: TDashboardWidgetKey; title: string; folder: string } | null => {
+): { key: TDashboardWidgetKey; name: string; folder: string } | null => {
   // Regex to capture the folder name between 'widget-' and '/index.ts'
   const match = path.match(/\/widget-([a-zA-Z0-9-]+)\/index\.ts$/)
 
   if (match && match[1]) {
-    const folderName = match[1] // e.g., "gold-prices"
+    const folderName = match[1] // e.g., "total-orders"
     const segments = folderName.split('-')
 
-    // 1. Generate Key: WidgetGoldPrices
+    // 1. Generate Key: i.e. WidgetTotalOrders
     const key = `Widget${segments
       .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
       .join('')}` as TDashboardWidgetKey
 
-    // 2. Generate Title: Gold Prices
-    const title = segments.map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')
+    // 2. Generate name
+    const name = segments.map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')
 
     return {
       key,
-      title,
+      name,
       folder: folderName,
     }
   }
@@ -370,7 +371,7 @@ export const localWidgetDiscovery = (
     const pathData = parseKeyAndTitleFromFilePath(path)
 
     if (pathData && moduleOrLoader) {
-      const { key, title, folder } = pathData
+      const { key, name, folder } = pathData
 
       // 1. Resolve Metadata using the strict path
       // Because we use meta.ts, we don't need to guess anymore
@@ -378,7 +379,7 @@ export const localWidgetDiscovery = (
 
       if (!widgetMeta) {
         widgetMeta = getDefaultWidgetMetaFromKey(key, {
-          title,
+          name,
           description: `Local ${lazy ? 'dynamic' : 'static'} widget`,
         })
       }

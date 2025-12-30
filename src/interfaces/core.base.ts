@@ -196,7 +196,7 @@ export type TDashboardWidgetCatalogBase<
  * and/or `description`.
  */
 export type TGetDefaultWidgetMetaFromKeyOptions = {
-  title?: string
+  name?: string
   description?: string
 }
 
