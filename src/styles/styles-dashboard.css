@@ -166,6 +166,7 @@ html {
     min-width: 5%;
     max-width: 100%;
   }
+
   .dashboard-widget-container.large-widget.widget-container-grid .widget-container-inner {
     display: grid;
     grid-template-columns: repeat(2, minmax(var(--bwj-widget-width), 1fr));
@@ -274,7 +275,8 @@ html {
       max-width: 100%;
       grid-column: auto;
     }
-    .dashboard-widget-container.widget-container-flex.direction-row .widget-container-inner {
+    .dashboard-widget-container.widget-container-flex.direction-row .widget-container-inner,
+    .dashboard-widget-container.large-widget.widget-container-grid .widget-container-inner {
       display: flex;
       flex-wrap: wrap;
       flex-direction: column !important;
