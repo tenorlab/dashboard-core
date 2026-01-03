@@ -53,8 +53,26 @@ export interface IDashboardConfig {
   _stateDescription?: string
 }
 
-/* begin: undo history */
+/* begin: store */
+/**
+ * @name TAddWidgetResponse
+ * @description Type for the response of the addWidget mutation
+ * @property {boolean} success - Indicates if the widget was added successfully
+ * @property {string} [message] - Optional message providing additional information
+ * @property {IDashboardConfig} updatedDashboardConfig - The updated dashboard configuration after adding the widget
+ * @property {IDashboardConfig[]} allUpdatedDashboardConfigs - All updated dashboard configurations
+ */
+export type TAddWidgetResponse = {
+  success: boolean
+  message?: string
+  updatedDashboardConfig: IDashboardConfig
+  allUpdatedDashboardConfigs: IDashboardConfig[]
+}
+export type TRemoveWidgetResponse = TAddWidgetResponse
+export type TMoveWidgetResponse = TAddWidgetResponse
+/* end: store */
 
+/* begin: undo history */
 /**
  * @name TUndoHistoryEntry
  * @description Type for an undo history entry
