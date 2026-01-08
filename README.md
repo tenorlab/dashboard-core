@@ -42,8 +42,8 @@ This project uses **Vite** and **TypeScript 5.8+**.
  - [@tenorlab/react-dashboard](https://www.npmjs.com/package/@tenorlab/react-dashboard): React-specific components
  - [@tenorlab/vue-dashboard](https://www.npmjs.com/package/@tenorlab/vue-dashboard): Vue-specific components
  - [Official Website](https://www.tenorlab.com)
- - [React Demo](https://react.tenorlab.com)
- - [Vue Demo](https://vue.tenorlab.com)
+ - [React Demo](https://react.tenorlab.com) (built with @tenorlab/react-dashboard)
+ - [Vue Demo](https://vue.tenorlab.com) (built with @tenorlab/vue-dashboard)
  - [Buy a License](https://payhip.com/b/gPBpo)
  - [Follow on BlueSky](https://bsky.app/profile/tenorlab.bsky.social)
 
