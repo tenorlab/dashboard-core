@@ -9,8 +9,8 @@ This package serves as the foundational layer for our framework-specific librari
 - **@tenorlab/dashboard-core**: (this package) Base types, state logic, and math utilities.
 
 ## These are some package extending to specific frameworks
-- **@tenorlab/vue-dashboard**: Vue-specific components (re-exports the dashboard-core as well).
-- **@tenorlab/react-dashboard**: React-specific components (re-exports the dashboard-coreas well).
+ - **[@tenorlab/react-dashboard](https://www.npmjs.com/package/@tenorlab/react-dashboard)**: React-specific components (re-exports the dashboard-coreas well).
+ - **[@tenorlab/vue-dashboard](https://www.npmjs.com/package/@tenorlab/vue-dashboard)**: Vue-specific components (re-exports the dashboard-core as well).
 
 ## Purpose
 
@@ -35,3 +35,15 @@ While primarily consumed by our framework wrappers, you could use the core for v
 ## Development
 
 This project uses **Vite** and **TypeScript 5.8+**.
+
+------
+
+## Links
+ - [@tenorlab/react-dashboard](https://www.npmjs.com/package/@tenorlab/react-dashboard): React-specific components
+ - [@tenorlab/vue-dashboard](https://www.npmjs.com/package/@tenorlab/vue-dashboard): Vue-specific components
+ - [Official Website](https://www.tenorlab.com)
+ - [React Demo](https://react.tenorlab.com)
+ - [Vue Demo](https://vue.tenorlab.com)
+ - [Buy a License](https://payhip.com/b/gPBpo)
+ - [Follow on BlueSky](https://bsky.app/profile/tenorlab.bsky.social)
+
