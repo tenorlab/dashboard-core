@@ -1,5 +1,8 @@
 # @tenorlab/dashboard-core
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Template: Pro](https://img.shields.io/badge/Template-Pro--Available-gold.svg)](https://www.tenorlab.com)
+
 The framework-agnostic engine powering the Tenorlab dashboard ecosystem.
 
 ## Ecosystem Architecture
@@ -8,7 +11,7 @@ This package serves as the foundational layer for our framework-specific librari
 
 - **@tenorlab/dashboard-core**: (this package) Base types, state logic, and math utilities.
 
-## These are some package extending to specific frameworks
+## These are the packages extending to specific frameworks
  - **[@tenorlab/react-dashboard](https://www.npmjs.com/package/@tenorlab/react-dashboard)**: React-specific components (re-exports the dashboard-core as well).
  - **[@tenorlab/vue-dashboard](https://www.npmjs.com/package/@tenorlab/vue-dashboard)**: Vue-specific components (re-exports the dashboard-core as well).
 
@@ -39,6 +42,7 @@ This project uses **Vite** and **TypeScript 5.8+**.
 ------
 
 ## Links
+
  - [@tenorlab/react-dashboard](https://www.npmjs.com/package/@tenorlab/react-dashboard): React-specific components
  - [@tenorlab/vue-dashboard](https://www.npmjs.com/package/@tenorlab/vue-dashboard): Vue-specific components
  - [Official Website](https://www.tenorlab.com)
@@ -47,3 +51,23 @@ This project uses **Vite** and **TypeScript 5.8+**.
  - [Buy a License](https://payhip.com/b/gPBpo)
  - [Follow on BlueSky](https://bsky.app/profile/tenorlab.bsky.social)
 
+
+------
+
+## ⚖️ Licensing & Usage
+
+**@tenorlab/dashboard-core** is [MIT licensed](https://opensource.org/licenses/MIT). 
+
+It provides the framework-agnostic abstraction and foundation for building dashboards. You are free to use it in any project, personal or commercial.
+
+## ⚡️ Go Pro and Save Time: Tenorlab App Template
+
+A commercial license for a full-blown professional app template is available for purchase [**here**](https://www.tenorlab.com) and comes with:
+
+* **Full Application Shell:** A clean, optimized Vite + TypeScript project structure (with either React or Vue).
+* **Dashboard Management:** Production-ready logic for creating, listing, renaming, and deleting multiple user-defined dashboards.
+* **Implementation Examples:** Expert patterns for both "Read-Only" (Analyst view) and "User-Editable" (Admin view) dashboard modes.
+* **Tenorlab Theme Engine:** A sophisticated Tailwind-based system supporting multiple custom themes (not just Light/Dark mode).
+
+
+[**Live React Demo**](https://react.tenorlab.com), [**Live Vue Demo**](https://vue.tenorlab.com)
