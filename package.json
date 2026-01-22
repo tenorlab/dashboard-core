@@ -1,6 +1,6 @@
 {
   "name": "@tenorlab/dashboard-core",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Framework-agnostic foundation types and utils for dashboards",
   "license": "MIT",
   "author": "Damiano Fusco",
@@ -19,8 +19,6 @@
   "scripts": {
     "dev": "vite",
     "clean": "rm -rf dist node_modules package-lock.json",
-    "OLD-build-types": "tsc src/index.ts --jsx react-jsx --downlevelIteration --esModuleInterop --declaration --emitDeclarationOnly --outDir dist",
-    "OLD-build": "npm run pretty; tsc --jsx react-jsx --esModuleInterop && vite build; npm run build-types",
     "build": "npm run pretty && vite build",
     "pub": "npm run build; npm publish --access public --otp=",
     "test": "TESTING=true vitest run",
