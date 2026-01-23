@@ -70,9 +70,7 @@ const _getSavedDashboards: TGetSavedDashboards = async (
           savedSettings.forEach((setting) => {
             setting.value = (setting.value || '').replace(/NaN/g, '')
             // get default setting
-            const defaultSetting = defaultDashboardConfig.cssSettings.find(
-              (ds) => ds.key === setting.key,
-            )
+            const defaultSetting = defaultDashboardConfig.cssSettings.find((ds) => ds.key === setting.key)
             if (defaultSetting) {
               // ensure all properties exist
               Object.keys(defaultSetting).forEach((propKey) => {
@@ -96,9 +94,7 @@ const _getSavedDashboards: TGetSavedDashboards = async (
           })
           // add all missing default setting entries
           const missingSettings = defaultDashboardConfig.cssSettings.filter((defaultSetting) => {
-            return !savedSettings.some(
-              (existingSetting) => existingSetting.key === defaultSetting.key,
-            )
+            return !savedSettings.some((existingSetting) => existingSetting.key === defaultSetting.key)
           })
           // update dashboard config settings
           dashboardConfig.cssSettings = [...savedSettings, ...missingSettings]

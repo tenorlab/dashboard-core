@@ -21,10 +21,7 @@ export const dashboardSettingsUtils = {
    * @param direction: -1 (for decrement) or 1 (for increment)
    * @returns the update item
    */
-  incrementOrDecrementValue: (
-    item: IDashboardSettingEntry,
-    direction: -1 | 1,
-  ): IDashboardSettingEntry => {
+  incrementOrDecrementValue: (item: IDashboardSettingEntry, direction: -1 | 1): IDashboardSettingEntry => {
     // Extract the numeric part (e.g., '1.0' from '1.0rem')
     // We use a regex to find the number part.
     const numMatchArray = item.value.match(/([\d.]+)/)

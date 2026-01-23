@@ -8,10 +8,7 @@
  * @param additionalClasses
  * @returns the distinct list as a string
  */
-export const getDistinctCssClasses = (
-  defaultClasses: string,
-  ...additionalClasses: string[]
-): string => {
+export const getDistinctCssClasses = (defaultClasses: string, ...additionalClasses: string[]): string => {
   // distinct css classes
   const result = [
     ...new Set(

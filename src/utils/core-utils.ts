@@ -76,9 +76,7 @@ export const removeEmptyContainers = (dashboardConfig: IDashboardConfig): IDashb
       )
       if (!childWidgets || childWidgets.length === 0) {
         // remove empty container
-        updatedDashboardConfig.widgets = updatedDashboardConfig.widgets.filter(
-          (x) => x !== widgetKey,
-        )
+        updatedDashboardConfig.widgets = updatedDashboardConfig.widgets.filter((x) => x !== widgetKey)
         return false
       }
     }
@@ -95,9 +93,7 @@ export const removeEmptyContainers = (dashboardConfig: IDashboardConfig): IDashb
 export const ensureContainersSequence = (dashboardConfig: IDashboardConfig): IDashboardConfig => {
   // 1. Filter Keys and Create the Key Remap (No Sorting!)
   // This array contains the container keys in their original order.
-  const allContainerKeysInOrder = dashboardConfig.widgets.filter((key) =>
-    key.includes('WidgetContainer'),
-  )
+  const allContainerKeysInOrder = dashboardConfig.widgets.filter((key) => key.includes('WidgetContainer'))
 
   // Iterate through the order-preserved keys to build the map sequentially
   const keyRemap: Record<string, string> = {}
@@ -182,10 +178,7 @@ export const getDefaultWidgetMetaFromMap = <TFrameworkElementType = any>(
  * @name getWidgetMetaFromCatalog
  * @description Helper to get widget meta info from the catalog by key.
  */
-export const getWidgetMetaFromCatalog = <
-  TFrameworkElementType = any,
-  TFrameworkComponentType = any,
->(
+export const getWidgetMetaFromCatalog = <TFrameworkElementType = any, TFrameworkComponentType = any>(
   widgetKey: TDashboardWidgetKey,
   widgetsCatalog: TDashboardWidgetCatalogBase<TFrameworkElementType, TFrameworkComponentType>,
 ): TWidgetMetaInfoBase<TFrameworkElementType> => {

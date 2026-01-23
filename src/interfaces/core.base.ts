@@ -115,6 +115,9 @@ export interface IDashboardWidgetPropsBase<TExtraProps = any> {
   size?: TWidgetSize
   borderCssClasses?: string
   backgroundCssClasses?: string
+  addCssClasses?: string
+  overrideCssClasses?: string
+  tags?: string[]
   hideTitle?: boolean
   noShadow?: boolean
   noBorder?: boolean
@@ -157,10 +160,7 @@ export type TWidgetFactoryBase<TFrameworkComponent = any> = () => Promise<{
  *   dynamic initialization; concrete loaders/components precedence should be
  *   defined by the integrator.
  */
-export interface IDynamicWidgetCatalogEntryBase<
-  TFrameworkElementType = any,
-  TFrameworkComponentType = any,
-> {
+export interface IDynamicWidgetCatalogEntryBase<TFrameworkElementType = any, TFrameworkComponentType = any> {
   key: TDashboardWidgetKey
   title: string
   isContainer?: boolean
@@ -181,10 +181,7 @@ export interface IDynamicWidgetCatalogEntryBase<
  * map is typically treated as a read-only registry; replace the map to update
  * the available widget set rather than mutating entries in-place.
  */
-export type TDashboardWidgetCatalogBase<
-  TFrameworkElementType = any,
-  TFrameworkComponentType = any,
-> = Map<
+export type TDashboardWidgetCatalogBase<TFrameworkElementType = any, TFrameworkComponentType = any> = Map<
   TDashboardWidgetKey,
   IDynamicWidgetCatalogEntryBase<TFrameworkElementType, TFrameworkComponentType>
 >

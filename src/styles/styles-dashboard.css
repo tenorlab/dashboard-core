@@ -25,10 +25,7 @@ html {
   .dashboard-main-grid {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(
-      var(--bwj-dashboard-num-columns, 4),
-      minmax(var(--bwj-widget-width), 1fr)
-    );
+    grid-template-columns: repeat(var(--bwj-dashboard-num-columns, 4), minmax(var(--bwj-widget-width), 1fr));
     gap: var(--bwj-dashboard-gap, 1.5rem);
     transform: scale(var(--bwj-dashboard-transform-scale, 1));
     transform-origin: top left;
@@ -138,6 +135,7 @@ html {
 
   /* begin: widget sizes */
   /* container flex styles */
+  .dashboard-widget.direction-row,
   .dashboard-widget-container.direction-row.widget-container-flex {
     grid-column: 1 / -1;
     width: 100%;
@@ -148,9 +146,7 @@ html {
     flex-direction: row;
     height: 100%;
   }
-  .dashboard-widget-container.direction-row.widget-container-flex
-    .widget-container-inner
-    .dashboard-widget {
+  .dashboard-widget-container.direction-row.widget-container-flex .widget-container-inner .dashboard-widget {
     min-width: 5%;
     max-width: 100%;
   }
@@ -175,8 +171,7 @@ html {
 
   /* container grid styles */
   /*.dashboard-widget-container:not(.direction-row):not(.large-widget):not(.xlarge-widget),*/
-  .dashboard-main-grid.responsive-grid
-    .dashboard-widget-container:not(.large-widget):not(.xlarge-widget),
+  .dashboard-main-grid.responsive-grid .dashboard-widget-container:not(.large-widget):not(.xlarge-widget),
   .dashboard-main-grid.responsive-grid .dashboard-widget:not(.large-widget):not(.xlarge-widget) {
     min-width: 20%; /*var(--bwj-widget-width); 20%*/
     max-width: 100%; /*var(--bwj-widget-width); 100%*/

@@ -1,6 +1,6 @@
 {
   "name": "@tenorlab/dashboard-core",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Framework-agnostic foundation types and utils for dashboards",
   "license": "MIT",
   "author": "Damiano Fusco",

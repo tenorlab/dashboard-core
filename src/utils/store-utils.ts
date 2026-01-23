@@ -172,9 +172,7 @@ export const dashboardStoreUtils = {
       // remove the root level widget
       const allWidgets = dashboardConfig.widgets || []
 
-      const updatedWidgets = allWidgets.filter(
-        (key) => `${key}`.trim().toLowerCase() !== lowerWidgetKey,
-      )
+      const updatedWidgets = allWidgets.filter((key) => `${key}`.trim().toLowerCase() !== lowerWidgetKey)
       // if the widget being removed is a container, remove also all its childWidgets
       const updatedChildWidgets = dashboardConfig.childWidgetsConfig.filter(
         (entry) => `${entry.parentWidgetKey}`.trim().toLowerCase() !== lowerWidgetKey,
