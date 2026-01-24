@@ -1,7 +1,7 @@
 # @tenorlab/dashboard-core
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Template: Pro](https://img.shields.io/badge/Template-Pro--Available-gold.svg)](https://www.tenorlab.com)
+[![Tenorlab Pro](https://img.shields.io/badge/Template-Pro--Available-gold.svg)](https://www.tenorlab.com)
 
 The framework-agnostic engine powering the Tenorlab dashboard ecosystem.
 
@@ -47,7 +47,7 @@ This project uses **Vite** and **TypeScript 5.8+**.
  - [@tenorlab/react-dashboard](https://www.npmjs.com/package/@tenorlab/react-dashboard): React-specific components
  - [@tenorlab/vue-dashboard](https://www.npmjs.com/package/@tenorlab/vue-dashboard): Vue-specific components
 
-### Pro Template Demos
+### Tenorlab Pro Demos
  - [React Demo](https://react.tenorlab.com) (built with @tenorlab/react-dashboard)
  - [Vue Demo](https://vue.tenorlab.com) (built with @tenorlab/vue-dashboard)
  - [Nuxt Demo](https://nuxt.tenorlab.com) (built with @tenorlab/vue-dashboard)
@@ -67,9 +67,9 @@ This project uses **Vite** and **TypeScript 5.8+**.
 
 It provides the foundational components and logic for building dashboards. You are free to use it in any project, personal or commercial.
 
-## ⚡️ Go Pro and Save Time: Tenorlab App Template
+## ⚡️ Go Pro and Save Time: Tenorlab Pro
 
-A commercial license for a full-blown professional app template is available for purchase [**here**](https://www.tenorlab.com) and comes with:
+A commercial license for a full-blown professional app code is available for purchase [**here**](https://www.tenorlab.com) and comes with:
 
 * **Full Application Shell:** A clean, optimized Vite + TypeScript project structure (with either React, Vue or Nuxt).
 * **Dashboard Management:** Production-ready logic for creating, listing, renaming, and deleting multiple user-defined dashboards.
