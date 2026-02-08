@@ -52,8 +52,10 @@ export type TWidgetMetaInfoBase<TFrameworkElementType = any> = {
   description: string
   categories: TWidgetCategory[]
   noDuplicatedWidgets?: boolean
-  icon?: TFrameworkElementType | undefined
+  icon?: TFrameworkElementType | string | undefined
   externalDependencies: string[]
+  tags?: string[]
+  noCollapse?: boolean
 }
 
 /**
@@ -86,6 +88,12 @@ export type TWidgetSize = 'default' | 'large' | 'xlarge'
  * either `row` or `column` flow.
  */
 export type TWidgetDirection = 'row' | 'column'
+
+export interface IWidgetSavedProps {
+  parentWidgetKey?: TDashboardWidgetKey
+  widgetKey: TDashboardWidgetKey
+  isCollapsed?: boolean
+}
 
 /**
  * @name IDashboardWidgetPropsBase
@@ -122,7 +130,10 @@ export interface IDashboardWidgetPropsBase<TExtraProps = any> {
   noShadow?: boolean
   noBorder?: boolean
   noPadding?: boolean
+  noCollapse?: boolean
   direction?: TWidgetDirection
+  widgetSavedProps?: IWidgetSavedProps
+  meta?: TWidgetMetaInfoBase
 
   extraProps?: TExtraProps
 }

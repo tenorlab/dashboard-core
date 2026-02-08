@@ -1,6 +1,6 @@
 // @tenorlab/dashboard-core
 // file: src/interfaces/core.interfaces.ts
-import type { TDashboardWidgetKey } from './core.base'
+import type { TDashboardWidgetKey, IWidgetSavedProps } from './core.base'
 
 /**
  * @name IChildWidgetConfigEntry
@@ -46,6 +46,7 @@ export interface IDashboardConfig {
   responsiveGrid: boolean
   widgets: TDashboardWidgetKey[]
   childWidgetsConfig: IChildWidgetConfigEntry[]
+  savedProps?: IWidgetSavedProps[]
   cssSettings: IDashboardSettingEntry[]
 
   // these are for unit tests only

@@ -39,6 +39,29 @@ While primarily consumed by our framework wrappers, you could use the core for v
 
 This project uses **Vite** and **TypeScript 5.8+**.
 
+## 🏗️ Details about Architecture & Structure
+The library exports four main modules:
+```
+  - /src/interfaces/ (382 lines)
+    - core.base.ts: Base types like TDashboardWidgetKey, TWidgetCategory, TWidgetMetaInfoBase
+    - core.interfaces.ts: Main dashboard and widget interfaces for configuration and layout
+    - storage-service.interfaces.ts: Contracts for persistent storage operations
+  - /src/dashboard-settings/
+    - dashboard-settings.ts: Core logic for managing dashboard state and configuration
+    - dashboard-settings-utils.ts: Helper functions for dashboard operations
+  - /src/storage-service/
+    - use-dashboard-storage-service.ts: Service for persisting and retrieving dashboard data
+    - Abstracts storage implementation details
+  - /src/utils/ - Utility functions:
+    - core-utils.ts: General dashboard utilities
+    - store-utils.ts: State/storage-related helpers
+    - color-utils.ts: Color manipulation and conversion
+    - css-vars-utils.ts: CSS variables management
+    - use-distinct-css-classes.ts: CSS class utilities
+  - /src/styles/
+    - Core CSS for dashboard components
+```
+
 ------
 
 ## Links
