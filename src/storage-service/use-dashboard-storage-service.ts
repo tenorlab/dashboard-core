@@ -56,7 +56,7 @@ const _getSavedDashboards: TGetSavedDashboards = async (
 
         // Add validation of parsedConfig if needed
         if ((dashboardConfig.widgets || []).length < 1) {
-          dashboardConfig.widgets = defaultDashboardConfig.widgets
+          dashboardConfig.widgets = []
         }
         // css setting entries (make sure we filter deprecated entries that were saved in local storage)
         const savedSettings = (dashboardConfig.cssSettings || []).filter((x) =>
